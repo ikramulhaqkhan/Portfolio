@@ -1,0 +1,109 @@
+.section {
+  padding: 60px 0;
+     background: radial-gradient(circle at top left, #eef2f3 0%, #dbe9ff 100%);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Contact Form Container */
+.contact-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  position: relative;
+}
+
+/* Labels */
+.form-group label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+/* Input Wrapper */
+.p-input-icon-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Icons inside input */
+.p-input-icon-left i {
+  position: absolute;
+  left: 10px;
+  color: #03A9F4;
+  font-size: 1.2rem;
+  top: 12px;
+}
+
+/* Input Fields */
+.p-input-icon-left input {
+  width: 100%;
+  padding: 10px 12px 10px 40px; /* Left padding for icon */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+/* Focus Effect */
+.p-input-icon-left input:focus,
+textarea:focus {
+  border-color: #03A9F4;
+  outline: none;
+  box-shadow: 0 0 5px rgba(3, 169, 244, 0.5);
+}
+
+/* Validation Error Messages */
+.text-danger {
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+  color: #d32f2f;
+}
+
+/* Submit Button */
+::ng-deep .p-button {
+  background: #03A9F4 !important;
+  border: none !important;
+  color: white !important;
+  padding: 12px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+::ng-deep .p-button:hover {
+  background: #0288D1 !important;
+}

@@ -1,0 +1,26 @@
+
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section-title"><span class="">Technical Expertise</span></h2>
+    <div class="skills-grid" @staggerAnimation>
+      <p-card *ngFor="let skill of skills; let i = index"
+              class="skill-card glass-card shadow"
+              [@cardAnimation]="{value: '', params: {delay: i * 100}}">
+        <div class="skill-content">
+          <div class="skill-header">
+            <div class="skill-icon-container glass-icon">
+              <div [innerHTML]="skill.iconSvg"></div>
+            </div>
+            <div class="skill-info">
+              <h3>{{ skill.name }}</h3>
+              <span class="skill-years">{{ skill.experience }}</span>
+            </div>
+          </div>
+          <div class="skill-progress">
+            <p-progressBar [value]="skill.level" [showValue]="true"></p-progressBar>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</section>

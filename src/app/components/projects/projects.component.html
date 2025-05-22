@@ -1,0 +1,33 @@
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid animate-fade-in row">
+      <div class="col-md-4" *ngFor="let project of projects">
+        <div class="card project-card">
+          <!-- Project Image -->
+          <img src="../../../assets/images/Patient-AR-Dashboard.png" alt="{{ project.title }}" class="project-image">
+
+          <!-- Card Body -->
+          <div class="card-body">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+
+            <!-- Technologies Used -->
+            <div class="technologies">
+              <span class="tech-tag" *ngFor="let tech of project.technologies">
+                {{ tech }}
+              </span>
+            </div>
+
+            <!-- View Project Button -->
+            <a [href]="project.link" target="_blank">
+              <button class="btn btn-primary">
+                <i class="pi pi-external-link"></i> View Project
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
