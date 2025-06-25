@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs from 'emailjs-com';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  providers: [MessageService]
 })
 export class ContactComponent {
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,  private messageService: MessageService) {
     this.contactForm = this.fb.group({
   name: ['', Validators.required],
   email: ['', [Validators.required, Validators.email]],
@@ -19,22 +21,33 @@ export class ContactComponent {
 });
 
   }
-
+success = false;
+error = false;
   onSubmit() {
     if (this.contactForm.valid) {
       const serviceID = 'service_nyep1hi';
       const templateID = 'template_yv78ffk';
       const publicKey = 'QtQw4wXPndS01PgDe'; // found in EmailJS dashboard
 
-      emailjs.send(serviceID, templateID, this.contactForm.value, publicKey)
-        .then(response => {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Message sent successfully!');
+       emailjs.send(serviceID, templateID, this.contactForm.value, publicKey)
+        .then(() => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Message Sent',
+            detail: 'Thank you! I will contact you soon.',
+            life: 3000
+          });
           this.contactForm.reset();
-        }, error => {
-          console.error('FAILED...', error);
-          alert('Something went wrong. Please try again.');
+        })
+        .catch(() => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Send Failed',
+            detail: 'Please try again later.',
+            life: 3000
+          });
         });
+  
     }
   }
 }

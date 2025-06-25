@@ -9,6 +9,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { ToastModule } from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +44,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     InputTextModule,
     InputTextareaModule,
     ProgressBarModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
