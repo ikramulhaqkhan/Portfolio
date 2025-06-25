@@ -1,43 +1,60 @@
 .section {
-  padding: 60px 0;
-     background: radial-gradient(circle at top left, #eef2f3 0%, #dbe9ff 100%);
+  padding: 80px 0;
+  background: radial-gradient(circle at top left, #eef2f3 0%, #dbe9ff 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
   text-align: center;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #222;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 12px auto 0;
+  background-color: #03A9F4;
+  border-radius: 2px;
 }
 
 /* Contact Form Container */
 .contact-container {
   background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.contact-container:hover {
+  transform: translateY(-5px);
 }
 
 /* Form Group */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   text-align: left;
-  position: relative;
 }
 
 /* Labels */
 .form-group label {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  color: #444;
   display: block;
-  color: #333;
 }
 
 /* Input Wrapper */
@@ -48,62 +65,66 @@
   width: 100%;
 }
 
-/* Icons inside input */
 .p-input-icon-left i {
   position: absolute;
-  left: 10px;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
   color: #03A9F4;
   font-size: 1.2rem;
-  top: 12px;
 }
 
-/* Input Fields */
-.p-input-icon-left input {
-  width: 100%;
-  padding: 10px 12px 10px 40px; /* Left padding for icon */
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-/* Textarea */
+/* Input & Textarea Styles */
+.p-input-icon-left input,
 textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
-  resize: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  background: #fdfdfd;
 }
 
-/* Focus Effect */
+textarea {
+  padding-left: 14px;
+  min-height: 120px;
+}
+
+/* Focus Effects */
 .p-input-icon-left input:focus,
 textarea:focus {
   border-color: #03A9F4;
   outline: none;
-  box-shadow: 0 0 5px rgba(3, 169, 244, 0.5);
+  box-shadow: 0 0 8px rgba(3, 169, 244, 0.3);
 }
 
-/* Validation Error Messages */
+/* Error Text */
 .text-danger {
   font-size: 0.85rem;
-  margin-top: 5px;
-  display: block;
-  color: #d32f2f;
+  margin-top: 4px;
+  color: #e53935;
+  font-weight: 500;
 }
 
 /* Submit Button */
 ::ng-deep .p-button {
-  background: #03A9F4 !important;
+  background: linear-gradient(to right, #03A9F4, #0288D1) !important;
   border: none !important;
   color: white !important;
-  padding: 12px;
+  padding: 14px;
   font-size: 1rem;
-  transition: background 0.3s ease;
+  border-radius: 8px !important;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 ::ng-deep .p-button:hover {
-  background: #0288D1 !important;
+  background: linear-gradient(to right, #0288D1, #0277BD) !important;
+  transform: translateY(-2px);
+}
+
+::ng-deep .p-button:disabled {
+  background: #b3e5fc !important;
+  color: #eee !important;
+  cursor: not-allowed;
 }
